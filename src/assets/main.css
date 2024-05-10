@@ -1,0 +1,25 @@
+@import './base.css';
+
+#app {
+  overflow: hidden;
+}
+
+.login {
+  background-image: url('http://e3t.uis.edu.co/eisi/images/Grupos/G7/contenidos/imagenes/20191030130119-inicio.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-y: auto;
+}
+
+.header_login {
+  background: url('https://uis.edu.co/wp-content/uploads/2023/03/Logo-UIS-75.png') no-repeat;
+  background-size: contain;
+}
+
+/*@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}*/
