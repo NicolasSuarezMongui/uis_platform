@@ -2,15 +2,23 @@
 import { supabase } from '@/lib/supabaseClient.js'
 async function uploadFile(e) {
   let file = e.target.files[0]
+  const filePath = 'test/archivo_1.pdf'
 
-  const { data, error } = await supabase.storage
-    .from('degree_works_files')
-    .upload('test/archivo_1.pdf', file)
+  try {
+    const { data, error } = await supabase.storage
+      .from('degree_works_files')
+      .upload(filePath, file, {
+        cacheControl: '3600',
+        upsert: true
+      })
 
-  if (data) {
-    console.log('File uploaded')
-  } else {
-    console.log('Error uploading file ' + error)
+    if (data) {
+      console.log('File uploaded')
+    } else {
+      console.log('Error uploading file ' + error)
+    }
+  } catch (error) {
+    console.log('Error general:' + error)
   }
 }
 </script>
